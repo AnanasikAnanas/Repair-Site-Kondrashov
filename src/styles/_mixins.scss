@@ -1,0 +1,35 @@
+@mixin button($bg-color, $text-color) {
+  padding: 30px 60px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 26.875rem;
+  transition: background-color 0.3s;
+  color: $text-color;
+  background: $bg-color;
+  border-radius: 1000px;
+  border: 1px solid $color-jumbo;
+  &:hover {
+    background: #848386;
+    color: $color-graphite;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}

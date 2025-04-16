@@ -1,0 +1,15 @@
+@import './_colors';
+@import './_typography';
+@import './_spacing';
+@import './_radius';
+@import './_shadows';
+@import './_breakpoints';
+@import './_mixins';
+
+body {
+  font-family: $font-family-base;
+  color: $text-color;
+  line-height: $line-height-base;
+  margin: 0;
+  font-size: $font-size-body;
+}
