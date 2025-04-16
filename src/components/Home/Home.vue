@@ -71,7 +71,7 @@ export default {
   align-items: center;
   gap: 40px;
   position: absolute;
-  right: 0px;
+  right: 50px;
   bottom: -25rem;
 
   p {
