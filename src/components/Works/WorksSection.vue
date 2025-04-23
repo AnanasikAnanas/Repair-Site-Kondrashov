@@ -57,7 +57,7 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import Rhombus from '@/components/icons/Rhombus.vue'
-import ArrowSlider from '@/components/icons/ArraySlider.vue'
+import ArrowSlider from '@/components/icons/ArrowSlider.vue'
 
 const slides = ref([
   {

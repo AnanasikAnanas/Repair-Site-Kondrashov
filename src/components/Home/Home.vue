@@ -10,7 +10,7 @@ export default {
 <template>
   <main class="hero">
     <TheHeader class="container" color="white" />
-    <div class="main-content container">
+    <div class="main-content">
       <div class="content">
         <h1>Ремонт и отделка в Сочи</h1>
         <div class="subtitle-container">
@@ -42,7 +42,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  align-content: space-around;
+  padding: 50px;
 }
 
 .content {
@@ -70,9 +70,8 @@ export default {
   display: flex;
   align-items: center;
   gap: 40px;
-  position: absolute;
-  right: 50px;
-  bottom: -25rem;
+  align-self: flex-end;
+  margin-top: 150px;
 
   p {
     font-size: 30px;
