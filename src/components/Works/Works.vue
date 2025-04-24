@@ -55,7 +55,7 @@ const works = [
 
 <template>
   <div class="works">
-    <h1>Лучшие решения по ремонту и отделке для жителей Сочи!</h1>
+    <h1 class="text-6xl">Лучшие решения по ремонту и отделке для жителей Сочи!</h1>
 
     <div class="works-slider">
       <div class="slider-header">
@@ -95,7 +95,6 @@ const works = [
   padding: 0 50px;
 
   h1 {
-    font-size: 64px;
     font-weight: 500;
     max-width: 910px;
     line-height: 130%;

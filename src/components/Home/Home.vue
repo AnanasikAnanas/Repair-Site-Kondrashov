@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <main class="hero">
+  <main class="hero px-1">
     <TheHeader class="container" color="white" />
     <div class="main-content container">
       <div class="content">
