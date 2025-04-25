@@ -8,7 +8,7 @@
       nextEl: '.custom-next',
       prevEl: '.custom-prev',
     }"
-    pagination="{
+    :pagination="{
       el: '.custom-pagination',
       clickable: true,
     }"
@@ -16,18 +16,18 @@
   >
     <SwiperSlide v-for="(image, index) in images" :key="index">
       <img :src="image" alt="Project Image" class="image-slider__image" />
-      <div class="image-slider__container">
-        <div class="image-slider__pagination"></div>
-        <div class="image-slider__buttons">
-          <button class="nav-btn custom-prev" aria-label="Назад">
-            <ArrowSlider />
-          </button>
-          <button class="nav-btn custom-next" aria-label="Вперёд">
-            <ArrowSlider direction="right" />
-          </button>
-        </div>
-      </div>
     </SwiperSlide>
+    <div class="image-slider__container">
+      <div class="custom-pagination"></div>
+      <div class="image-slider__buttons">
+        <button class="nav-btn custom-prev" aria-label="Назад">
+          <ArrowSlider rotate="0" />
+        </button>
+        <button class="nav-btn custom-next" aria-label="Вперёд">
+          <ArrowSlider rotate="180" />
+        </button>
+      </div>
+    </div>
   </Swiper>
 </template>
 
@@ -63,47 +63,71 @@ export default {
 <style scoped>
 .image-slider {
   width: 56.875rem;
+  position: relative;
 }
+
 .image-slider__container {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  z-index: 100;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  z-index: 10;
 }
+
 .image-slider__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-  position: absolute;
+  border-radius: 10px;
 }
+
 .image-slider__buttons {
   display: flex;
-  gap: 15px;
-  
+  gap: 0.9375rem;
+  margin-right: 1rem;
 }
-.image-slider__pagination {
-  width: 100%;
-  height: 100%;
-  background-color: red;
+
+.custom-pagination {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  z-index: 10;
 }
 
 .nav-btn {
-  padding: 15px;
+  padding: 0.9375rem;
   border-radius: 1000px;
   border: none;
   cursor: pointer;
   background-color: #fffbfc;
-}
-.swiper-button-prev,
-.swiper-button-next::after {
-  display: none;
-}
-.custom-pagination {
   display: flex;
-  gap: 10px;
-  position: absolute;
+  align-items: center;
+  justify-content: center;
 }
-.swiper-pagination-bullet {
+
+:deep(.swiper-button-prev),
+:deep(.swiper-button-next) {
   display: none;
+}
+
+:deep(.swiper-pagination-bullet) {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #fffbfc;
+  opacity: 0.5;
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+:deep(.swiper-pagination-bullet-active) {
+  opacity: 1;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #fffbfc;
 }
 </style>

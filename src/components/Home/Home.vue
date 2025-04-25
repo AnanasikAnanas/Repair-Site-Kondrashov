@@ -9,7 +9,7 @@ export default {
 
 <template>
   <main class="hero px-1">
-    <TheHeader class="container" color="white" />
+    <TheHeader class="" color="white" />
     <div class="main-content">
       <div class="content">
         <h1>Ремонт и отделка в Сочи</h1>
@@ -47,7 +47,9 @@ export default {
 
 .content {
   max-width: 980px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
   h1 {
     font-size: 120px;
     font-weight: 400;

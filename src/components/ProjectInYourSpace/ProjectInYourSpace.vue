@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Rhombus from '../icons/Rhombus.vue'
 
 </script>

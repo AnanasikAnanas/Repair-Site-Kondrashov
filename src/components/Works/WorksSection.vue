@@ -13,10 +13,10 @@
         <!-- Кастомные кнопки навигации слева -->
         <div class="work-types-slider__navigation">
           <button class="nav-btn custom-prev" aria-label="Назад">
-            <ArrowSlider />
+            <ArrowSlider rotate="0" />
           </button>
           <button class="nav-btn custom-next" aria-label="Вперёд">
-            <ArrowSlider direction="right" />
+            <ArrowSlider rotate="180" />
           </button>
         </div>
       </div>
@@ -28,6 +28,32 @@
           :slides-per-view="3"
           :loop="true"
           :space-between="40"
+          :breakpoints="{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            576: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1536: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+          }"
           :navigation="{
             nextEl: '.custom-next',
             prevEl: '.custom-prev',
@@ -92,67 +118,129 @@ const slides = ref([
 .works-section {
   display: flex;
   flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+
+  @media (max-width: 1200px) {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 20px;
+    gap: 20px;
+  }
+
   h1 {
     font-size: 4rem;
     font-weight: 500;
-    list-style: 130%;
+    line-height: 130%;
     max-width: 900px;
+
+    @media (max-width: 1200px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 2rem;
+    }
   }
-  .work-types-slider__left {
+  .work-types-slider__title {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 500px;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.125rem;
+    font-weight: 500;
   }
   .work-types-slider {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 
-    .work-types-slider__title {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-size: 1.125rem;
-      font-weight: 500;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 30px;
     }
+
+    .work-types-slider__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 500px;
+
+      @media (max-width: 1024px) {
+        height: auto;
+        gap: 20px;
+      }
+    }
+
+    .work-types-slider__right {
+      width: 100%;
+      max-width: 1400px;
+      .work-types-slider__slide {
+        max-width: 26.75rem;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          max-height: 31.25rem;
+          object-fit: cover;
+        }
+      }
+    }
+
     .work-types-slider__navigation {
       display: flex;
       align-items: center;
       gap: 10px;
+
       .nav-btn {
         padding: 24.5px;
         background-color: inherit;
         border-radius: 1000px;
         border: 1px solid #848386;
         cursor: pointer;
-      }
-    }
-    .work-types-slider__right {
-      max-width: 1400px;
-      display: flex;
+        transition: all 0.3s ease;
 
-      .work-types-slider__slide {
-        max-width: 100%;
+        &:hover {
+          background-color: #f0f0f0;
+        }
 
-        img {
-          max-width: 26.75rem;
-          max-height: 31.25rem;
-          object-fit: cover;
+        @media (max-width: 576px) {
+          padding: 15px;
         }
       }
     }
   }
 }
+
 .swiper-button-prev,
 .swiper-button-next::after {
   display: none;
 }
+
 .works-section__button {
   @include button(white, #848386);
   display: flex;
   justify-content: center;
   align-self: flex-end;
   margin-top: 60px;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    align-self: center;
+  }
+
   &:hover {
     background: #f0f0f0;
   }

@@ -1,9 +1,8 @@
 <script setup>
 defineProps({
-  direction: {
-    type: String,
-    default: 'left',
-    validator: (value) => ['left', 'right'].includes(value),
+  rotate: {
+    type: [Number, String],
+    default: 0,
   },
 })
 </script>
@@ -15,15 +14,14 @@ defineProps({
     height="25"
     viewBox="0 0 25 25"
     fill="#848386"
-    :style="{ transform: direction === 'right' ? 'rotate(180deg)' : 'none' }"
+    :style="{ transform: `rotate(${rotate}deg)` }"
   >
     <path
       d="M15 12.5H5M5 12.5L10 7.5M5 12.5L10 17.5"
-      stroke="currentColor"
+      stroke="#848386"
       stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
-      fill="#848386"
     />
   </svg>
 </template>
