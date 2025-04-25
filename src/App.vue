@@ -1,14 +1,21 @@
 <script>
-import Home from './components/Home/Home.vue'
-import Works from './components/Works/Works.vue'
 export default {
-  components: { Home, Works },
+  name: 'App',
 }
 </script>
 
 <template>
-  <Home />
-  <Works />
+  <router-view />
 </template>
 
-<style scoped></style>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: 'Inter', sans-serif;
+}
+</style>

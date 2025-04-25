@@ -14,7 +14,7 @@ defineProps({
     width="25"
     height="25"
     viewBox="0 0 25 25"
-    fill="none"
+    fill="#848386"
     :style="{ transform: direction === 'right' ? 'rotate(180deg)' : 'none' }"
   >
     <path
@@ -23,6 +23,7 @@ defineProps({
       stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
+      fill="#848386"
     />
   </svg>
 </template>
