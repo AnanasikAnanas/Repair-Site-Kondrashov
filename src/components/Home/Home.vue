@@ -1,5 +1,5 @@
 <script>
-import TheHeader from '../Header.vue'
+import TheHeader from '@/components/TheHeader.vue'
 import Rhombus from '../icons/Rhombus.vue'
 export default {
   components: { TheHeader, Rhombus },

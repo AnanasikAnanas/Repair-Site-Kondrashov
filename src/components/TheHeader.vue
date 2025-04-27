@@ -1,6 +1,6 @@
 <template>
   <header>
-    <IconLogo :color="color" />
+    <a href="/"> <IconLogo :color="color" /> </a>
     <Navigation :color="color" />
     <a :style="{ color }" href="#" class="number">+7 (931) 724 09 42</a>
     <button :style="{ color }">Оформить заявку</button>
