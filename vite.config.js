@@ -2,7 +2,6 @@ import { fileURLToPath, URL } from 'node:url'
 
 import vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
-import tailwindcss from 'tailwindcss'
 import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
@@ -10,7 +9,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   css: {
     postcss: {
-      plugins: [tailwindcss, autoprefixer],
+      plugins: [autoprefixer],
     },
     preprocessorOptions: {
       scss: {

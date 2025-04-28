@@ -4,7 +4,7 @@
       :modules="[Navigation]"
       :slidesPerView="1"
       :spaceBetween="50"
-			:loop="true"
+      :loop="true"
       :navigation="{
         prevEl: '.custom-prev-btn',
         nextEl: '.custom-next-btn',
@@ -12,11 +12,11 @@
       :pagination="{ clickable: true }"
       @slideChange="onSlideChange"
     >
-      <SwiperSlide v-for="slide in slides" :key="slide.name">
-        <CatalogCard :name="slide.name" :image="slide.image" :price="slide.price" />
+      <SwiperSlide v-for="cards in slides" :key="cards.id">
+        <CatalogCard :items="slides" />
       </SwiperSlide>
     </Swiper>
-		<div class="projects-slider__navigation">
+    <div class="projects-slider__navigation">
       <div class="projects-slider__navigation-btns">
         <button class="nav-btn custom-prev-btn">
           <span class="nav-btn__text">Пред</span>
@@ -32,7 +32,7 @@
 
 <style scoped lang="scss">
 .catalog-slider {
-	margin-top: 100px;
+  margin-top: 100px;
 }
 .projects-slider__navigation {
   padding-left: 50px;
@@ -86,13 +86,12 @@
 </style>
 
 <script setup>
-import { ref } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { ref } from 'vue'
 import CatalogCard from './CatalogCard.vue'
-
 const currentSlide = ref(0)
 
 const onSlideChange = (swiper) => {
@@ -101,21 +100,26 @@ const onSlideChange = (swiper) => {
 
 const slides = ref([
   {
+    id: 1,
     name: 'Черновой ремонт',
     image: '/catalog-img1.png',
     price: 'от 6.000 ₽ за м2',
   },
   {
+    id: 2,
     name: 'Капитальный ремонт',
     image: '/catalog-img1.png',
     price: 'от 14.000 ₽ за м2',
+    link: '/capital',
   },
   {
+    id: 3,
     name: 'Декоративный ремонт',
     image: '/catalog-img1.png',
     price: 'от 8.000 ₽ за м2',
   },
   {
+    id: 4,
     name: 'Евроремонт',
     image: '/catalog-img1.png',
     price: 'от 14.000 ₽ за м2',

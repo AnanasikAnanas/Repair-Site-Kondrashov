@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import './_colors';
 @import './_typography';
 @import './_radius';
@@ -16,4 +12,7 @@ body {
   margin: 0;
   font-size: $font-size-body;
   box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
 }

@@ -1,9 +1,10 @@
 <template>
   <nav>
     <a :style="{ color }" href="/catalog">Каталог</a>
-    <a :style="{ color }" href="">Портфолио</a>
+    <a :style="{ color }" href="#projects">Портфолио</a>
     <a :style="{ color }" href="">Акции</a>
-    <a :style="{ color }" href="">О компании</a>
+    <a :style="{ color }" href="#info">О компании</a>
+    <a :style="{ color }" href="">Контакты</a>
   </nav>
 </template>
 

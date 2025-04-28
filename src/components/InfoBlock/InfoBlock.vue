@@ -58,9 +58,16 @@
   display: flex;
   flex-direction: column;
 	gap: 130px;
+  h2{
+    margin: 0;
+  }
+  p{
+    margin: 0;
+  }
   .info-block__header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     h1 {
       font-size: 64px;
       font-weight: 500;
@@ -77,6 +84,7 @@
         line-height: 130%;
         letter-spacing: -0.36px;
         color: #848386;
+        margin: 0;
       }
     }
   }
@@ -94,6 +102,7 @@
         h2 {
           font-size: 30px;
           font-weight: 500;
+          margin: 0;
         }
         p {
           font-size: 18px;
@@ -108,6 +117,9 @@
 				align-items: center;
 				gap: 10px;
 				max-width: 360px;
+        h2{
+          margin: 0;
+        }
 			}
     }
   }

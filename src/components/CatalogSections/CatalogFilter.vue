@@ -17,9 +17,12 @@
 	display: flex;
 	flex-direction: column;
 	gap: 100px;
+	padding: 0 50px;
 	h1 {
 		font-size: 120px;
 		font-weight: 500;
+		margin: 0;
+		line-height: normal;
 	}
 	.catalog-filter__links {
 		display: flex;

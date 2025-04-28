@@ -71,6 +71,14 @@ footer {
   justify-content: space-between;
   padding: 50px;
   margin-top: 120px;
+  a{
+    color: black;
+    text-decoration: none;
+    transition-duration: 300ms;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
   .footer__container {
     display: flex;
     flex-direction: column;

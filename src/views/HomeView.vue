@@ -21,9 +21,9 @@ export default {
     <ProjectInYourSpace />
     <PricingPackagesSection />
     <BenefitsSection />
-    <ProjectsSection />
+    <ProjectsSection id='projects'/>
     <GuestsSection />
-    <InfoBlock />
+    <InfoBlock id='info'/>
     <Footer />
   </main>
 </template>

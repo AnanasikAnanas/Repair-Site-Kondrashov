@@ -73,6 +73,7 @@ export default {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 16px;
+  margin: 0;
 }
 
 .services__list {
@@ -80,6 +81,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin: 0;
 }
 
 .services__item {
