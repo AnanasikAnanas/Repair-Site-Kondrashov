@@ -9,7 +9,7 @@ export default {
 
 <template>
   <main class="hero px-1">
-    <TheHeader class="" color="white" />
+    <TheHeader class="" color="white"/>
     <div class="main-content">
       <div class="content">
         <h1>Ремонт и отделка в Сочи</h1>

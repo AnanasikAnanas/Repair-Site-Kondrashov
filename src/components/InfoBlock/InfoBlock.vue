@@ -73,6 +73,7 @@
       font-weight: 500;
       line-height: 130%;
       letter-spacing: -1.28px;
+      max-width: 740px;
     }
     .info-block__header-content {
       display: flex;

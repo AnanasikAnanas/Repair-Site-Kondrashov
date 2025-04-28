@@ -91,6 +91,7 @@ const navigateTo = (link) => {
 .label-block {
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
 .label-text {

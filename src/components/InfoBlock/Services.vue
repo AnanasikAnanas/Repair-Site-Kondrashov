@@ -68,7 +68,9 @@ export default {
   flex-direction: column;
   gap: 30px;
 }
-
+p{
+  margin: 0;
+}
 .services__title {
   font-size: 30px;
   font-weight: bold;
@@ -82,6 +84,7 @@ export default {
   flex-direction: column;
   gap: 20px;
   margin: 0;
+  padding: 0;
 }
 
 .services__item {

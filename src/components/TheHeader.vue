@@ -24,7 +24,6 @@ export default {
 
 <style scoped>
 header {
-  height: 100px;
   position: sticky;
   font-size: 18px;
   display: flex;
