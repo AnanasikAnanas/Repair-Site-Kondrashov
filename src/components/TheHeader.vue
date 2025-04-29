@@ -2,19 +2,23 @@
   <header>
     <a href="/"> <IconLogo :color="color" /> </a>
     <Navigation :color="color" />
-    <a :style="{ color, opacity}" href="#" class="number">+7 (931) 724 09 42</a>
-    <button :style="{ color }" @click='openModal'>Оформить заявку</button>
+    <a :style="{ color, opacity }" href="#" class="number">+7 (931) 724 09 42</a>
+    <button :style="{ color }" @click="openModal">Оформить заявку</button>
     <ModalFeedBack ref="feedbackModal" />
+    <button class="menu-button" @click="openMenu">Меню</button>
+    <MobileMenu ref="mobileMenu" />
   </header>
 </template>
 
 <script>
 import IconLogo from './icons/IconLogo.vue'
-import Navigation from './Navigation.vue'
+import MobileMenu from './MobileMenu.vue'
 import ModalFeedBack from './ModalFeedBack.vue'
+import Navigation from './Navigation.vue'
+
 export default {
   name: 'TheHeader',
-  components: { IconLogo, Navigation, ModalFeedBack },
+  components: { IconLogo, Navigation, ModalFeedBack, MobileMenu },
   props: {
     color: {
       type: String,
@@ -28,6 +32,9 @@ export default {
   methods: {
     openModal() {
       this.$refs.feedbackModal.openModal()
+    },
+    openMenu() {
+      this.$refs.mobileMenu.openMenu()
     },
   },
 }
@@ -51,5 +58,14 @@ button {
   border: none;
   text-decoration-line: underline;
   cursor: pointer;
+}
+.menu-button {
+  color: inherit;
+}
+
+@media (min-width: 769px) {
+  .menu-button {
+    display: none;
+  }
 }
 </style>

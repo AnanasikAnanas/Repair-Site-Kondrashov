@@ -70,6 +70,7 @@ import Rhombus from '../icons/Rhombus.vue'
     font-size: 120px;
     font-weight: 400;
     line-height: 1;
+    margin: 0;
 
     @media (max-width: 1200px) {
       font-size: 90px;
