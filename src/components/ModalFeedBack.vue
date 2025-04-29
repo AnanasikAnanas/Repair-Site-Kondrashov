@@ -132,18 +132,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '@/styles/mixins.scss';
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 99999;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .modal__content {
@@ -153,6 +159,19 @@ export default {
   width: 100%;
   max-width: 1020px;
   position: relative;
+  z-index: 100000;
+
+  @media (max-width: 992px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 20px;
+  }
 }
 
 .modal__header {
@@ -160,6 +179,14 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
+
+  @media (max-width: 992px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 }
 
 .modal__title {
@@ -167,6 +194,23 @@ export default {
   font-weight: 400;
   color: #40362e;
   margin: 0;
+  line-height: 1.1;
+
+  @media (max-width: 1200px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 992px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 24px;
+  }
 }
 
 .modal__close {
@@ -177,6 +221,15 @@ export default {
   color: #333;
   opacity: 0.5;
   padding: 0;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 .modal__form-grid {
@@ -184,33 +237,71 @@ export default {
   flex-direction: column;
   gap: 32px;
   margin-bottom: 60px;
+
+  @media (max-width: 992px) {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
 }
 
 .form-row {
   display: grid;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 16px;
+  }
 }
 
 /* Первая строка: 3 колонки равной ширины */
 .form-row:first-child {
   grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Вторая строка: 2 колонки равной ширины */
 .form-row:last-child {
   grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 }
 
 .form-group label {
   color: #080808;
   opacity: 0.4;
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .form-group input,
@@ -222,6 +313,15 @@ export default {
   box-sizing: border-box;
   outline: none;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px 16px;
+  }
 }
 
 .phone-input {
@@ -231,6 +331,22 @@ export default {
   border-radius: 4px;
   width: 100%;
   outline: none;
+
+  input {
+    border: none;
+    flex: 1;
+    padding: 15px 24px;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 10px 16px;
+    }
+  }
 }
 
 .phone-prefix {
@@ -240,44 +356,53 @@ export default {
   color: #080808;
   opacity: 0.4;
   font-size: 18px;
-}
 
-.phone-input input {
-  padding: 15px 24px;
-  border: none;
-  border-radius: 4px;
-  font-size: 18px;
-  width: 100%;
-  box-sizing: border-box;
-  outline: none;
+  @media (max-width: 768px) {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px 16px;
+  }
 }
 
 .modal__form-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
 }
 
 .modal__privacy {
-  color: #0a0a0a;
   font-size: 18px;
-  opacity: 0.2;
-  max-width: 405px;
+  color: #080808;
+  opacity: 0.4;
+  max-width: 360px;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    max-width: none;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
 }
 
 .modal__submit {
-  width: 425px;
-  padding: 30px 60px;
-  background: inherit;
-  color: #848386;
-  border: 1px solid rgba(132, 131, 134, 0.4);
-  border-radius: 1000px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  @include button(white, #848386);
+  min-width: 200px;
 
-.modal__submit:hover {
-  background-color: #f0f0f0;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 </style>

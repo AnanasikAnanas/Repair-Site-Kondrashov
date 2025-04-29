@@ -1,15 +1,14 @@
 <template>
   <div class="menu" :class="{ 'menu--open': isOpen }">
     <div class="menu__header">
+      <div class="menu__logo">
+        <IconLogo />
+      </div>
       <button class="menu__close" @click="closeMenu">Закрыть</button>
     </div>
 
-    <div class="menu__logo">
-      <IconLogo />
-    </div>
-
     <nav class="menu__nav">
-      <a href="#" class="menu__link">Услуги</a>
+      <a href="/catalog" class="menu__link">Услуги</a>
       <a href="#" class="menu__link">Акции</a>
       <a href="#" class="menu__link">О нас</a>
       <a href="#" class="menu__link">Отзывы</a>
@@ -60,7 +59,6 @@ import IconLogo from './icons/IconLogo.vue'
 import OkIcon from './icons/OkIcon.vue'
 import TelegramIcon from './icons/TelegramIcon.vue'
 import VkIcon from './icons/VkIcon.vue'
-import ViberIcon from './icons/ViberIcon.vue'
 import YoutubeIcon from './icons/YoutubeIcon.vue'
 
 const isOpen = ref(false)
@@ -82,20 +80,29 @@ defineExpose({
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/mixins.scss';
+
 .menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
   height: 100vh;
   background: #fffbfc;
-  z-index: 1000;
-  padding: 20px;
+  z-index: 99998;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
+  box-sizing: border-box;
+
+  @media (max-width: 576px) {
+    padding: 20px;
+  }
 
   &--open {
     transform: translateX(0);
@@ -105,7 +112,11 @@ defineExpose({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+
+    @media (max-width: 576px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__title {
@@ -119,24 +130,54 @@ defineExpose({
     background: none;
     border: none;
     cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__logo {
-    margin-bottom: 40px;
+
+
+    svg {
+      @media (max-width: 576px) {
+        transform: scale(0.9);
+        transform-origin: left center;
+      }
+    }
   }
 
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 576px) {
+      gap: 15px;
+      margin-bottom: 40px;
+    }
   }
 
   &__link {
     font-size: 24px;
     color: #0a0a0a;
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+    }
 
     &:hover {
       opacity: 0.7;
@@ -145,26 +186,45 @@ defineExpose({
 
   &__contacts {
     margin-top: auto;
+    padding-top: 30px;
+
+    @media (max-width: 576px) {
+      padding-top: 20px;
+    }
   }
 
   &__contact-label {
     font-size: 14px;
-    color: #0a0a0a;
+    color: rgba(10, 10, 10, 0.4);
     margin-bottom: 5px;
   }
 
   &__contact-value {
-    font-size: 16px;
+    font-size: 18px;
     color: #0a0a0a;
     text-decoration: none;
     margin-bottom: 20px;
     display: block;
+    transition: opacity 0.3s ease;
+
+    @media (max-width: 576px) {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__social {
     display: flex;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+
+    @media (max-width: 576px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__social-link {
@@ -173,28 +233,33 @@ defineExpose({
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(10, 10, 10, 0.1);
     border-radius: 50%;
-    transition: opacity 0.2s;
+    transition: all 0.3s ease;
+
+    @media (max-width: 576px) {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        transform: scale(0.9);
+      }
+    }
 
     &:hover {
       opacity: 0.7;
+      border-color: rgba(10, 10, 10, 0.2);
     }
   }
 
   &__callback {
+    @include button(white, #848386);
     width: 100%;
     padding: 15px;
-    background: none;
-    border: 1px solid rgba(10, 10, 10, 0.1);
-    border-radius: 5px;
     font-size: 16px;
-    color: #0a0a0a;
-    cursor: pointer;
-    transition: opacity 0.2s;
 
-    &:hover {
-      opacity: 0.7;
+    @media (max-width: 576px) {
+      padding: 12px;
+      font-size: 14px;
     }
   }
 }

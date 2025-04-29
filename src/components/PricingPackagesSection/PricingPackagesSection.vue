@@ -34,7 +34,24 @@ export default {
 .pricing-packages-section {
   display: flex;
   flex-direction: column;
-	gap: 60px;
+  gap: 60px;
+  padding: 0 50px;
+
+  @media (max-width: 1200px) {
+    padding: 0 40px;
+    gap: 50px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 30px;
+    gap: 40px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 20px;
+    gap: 30px;
+  }
+
   h1 {
     font-size: 64px;
     text-align: center;
@@ -42,8 +59,31 @@ export default {
     margin: 0 auto;
     margin-top: 180px;
     font-weight: 500;
-    line-height: 130%; /* 83.2px */
+    line-height: 130%;
     letter-spacing: -1.28px;
+
+    @media (max-width: 1200px) {
+      font-size: 48px;
+      max-width: 700px;
+      margin-top: 120px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+      max-width: 100%;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+      margin-top: 60px;
+    }
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 }
 </style>

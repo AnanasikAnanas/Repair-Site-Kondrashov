@@ -9,8 +9,8 @@
       </div>
     </div>
     <div class="footer__navs">
-      <a href="#">Все услуги</a>
-      <a href="">Капитальный ремонт</a>
+      <a href="/catalog">Все услуги</a>
+      <a href="/capital">Капитальный ремонт</a>
       <a href="">Офисный ремонт</a>
       <a href="">Черновой ремонт</a>
       <a href="">Евроремонт</a>
@@ -71,12 +71,15 @@ footer {
   justify-content: space-between;
   padding: 50px;
   margin-top: 120px;
-
   @media (max-width: 1200px) {
     padding: 40px;
     margin-top: 80px;
     flex-wrap: wrap;
     gap: 40px;
+  }
+
+  @media (max-width: 992px) {
+    gap: 30px;
   }
 
   @media (max-width: 768px) {
@@ -86,10 +89,16 @@ footer {
     gap: 30px;
   }
 
+  @media (max-width: 576px) {
+    padding: 20px;
+    margin-top: 40px;
+    gap: 25px;
+  }
+
   a {
     color: black;
     text-decoration: none;
-    transition-duration: 300ms;
+    transition: all 0.3s ease;
     &:hover {
       opacity: 0.5;
     }
@@ -100,21 +109,23 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    flex: 1;
 
     @media (max-width: 768px) {
       align-items: center;
       text-align: center;
+      min-width: auto;
     }
 
     .footer__links {
       display: flex;
       flex-direction: column;
       gap: 30px;
-      max-width: 275px;
-
+      max-width: 295px;
       @media (max-width: 768px) {
         align-items: center;
         gap: 20px;
+        max-width: none;
       }
 
       a {
@@ -126,6 +137,10 @@ footer {
         @media (max-width: 768px) {
           font-size: 16px;
         }
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -134,7 +149,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
+    flex: 1;
     @media (max-width: 768px) {
       align-items: center;
       gap: 20px;
@@ -143,13 +158,18 @@ footer {
     a {
       font-size: 30px;
       font-weight: 400;
+      line-height: 120%;
 
-      @media (max-width: 1200px) {
+      @media (max-width: 1536px) {
         font-size: 24px;
       }
 
       @media (max-width: 768px) {
         font-size: 20px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 18px;
       }
     }
   }
@@ -158,11 +178,13 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
 
     @media (max-width: 768px) {
       align-items: center;
       text-align: center;
       gap: 30px;
+      min-width: auto;
     }
 
     .footer__contacts-left {
@@ -179,15 +201,35 @@ footer {
     a {
       color: #848386;
       text-decoration: underline;
+      font-size: 18px;
+
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
     }
 
     .footer__email,
     .footer__phone {
       display: flex;
       flex-direction: column;
+      gap: 5px;
 
       @media (max-width: 768px) {
         align-items: center;
+      }
+
+      p {
+        font-size: 16px;
+        opacity: 0.4;
+        margin: 0;
+
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
       }
     }
 
@@ -197,6 +239,21 @@ footer {
 
       @media (max-width: 768px) {
         justify-content: center;
+      }
+
+      a {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        svg {
+          @media (max-width: 576px) {
+            transform: scale(0.9);
+          }
+        }
       }
     }
   }

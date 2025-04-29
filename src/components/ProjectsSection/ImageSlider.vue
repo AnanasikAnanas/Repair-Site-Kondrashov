@@ -60,10 +60,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .image-slider {
   width: 56.875rem;
   position: relative;
+
+  @media (max-width: 1536px) {
+    width: 45rem;
+  }
+
+  @media (max-width: 1200px) {
+    width: 35rem;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 }
 
 .image-slider__container {
@@ -76,19 +88,41 @@ export default {
   align-items: center;
   padding: 1rem;
   z-index: 10;
+
+  @media (max-width: 576px) {
+    padding: 0.5rem;
+  }
 }
 
 .image-slider__image {
   width: 100%;
-  height: 100%;
+  height: 500px;
   object-fit: cover;
   border-radius: 10px;
+
+  @media (max-width: 1200px) {
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media (max-width: 576px) {
+    height: 250px;
+    border-radius: 5px;
+  }
 }
 
 .image-slider__buttons {
   display: flex;
   gap: 0.9375rem;
   margin-right: 1rem;
+
+  @media (max-width: 576px) {
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .custom-pagination {
@@ -97,6 +131,11 @@ export default {
   left: 1rem;
   display: flex;
   z-index: 10;
+
+  @media (max-width: 576px) {
+    bottom: 0.5rem;
+    left: 0.5rem;
+  }
 }
 
 .nav-btn {
@@ -108,6 +147,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 576px) {
+    padding: 0.625rem;
+  }
 }
 
 :deep(.swiper-button-prev),
@@ -122,6 +165,11 @@ export default {
   opacity: 0.5;
   transform: rotate(45deg);
   transition: all 0.3s ease;
+
+  @media (max-width: 576px) {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
 }
 
 :deep(.swiper-pagination-bullet-active) {
@@ -129,5 +177,10 @@ export default {
   width: 0.625rem;
   height: 0.625rem;
   background-color: #fffbfc;
+
+  @media (max-width: 576px) {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
 </style>

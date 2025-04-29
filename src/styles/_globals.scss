@@ -1,9 +1,26 @@
 // _globals.scss
 
+@import './variables';
+@import './mixins';
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+
+  @include respond-to(xs) {
+    font-size: $font-size-sm;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-base;
+  }
 }
 
 body {
@@ -14,4 +31,80 @@ body {
   font-family: 'Manrope', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container {
+  @include container;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Responsive Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+
+  @include respond-to(xs) {
+    font-size: $font-size-xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-xl;
+
+  @include respond-to(xs) {
+    font-size: $font-size-lg;
+  }
+}
+
+h3 {
+  font-size: $font-size-lg;
+
+  @include respond-to(xs) {
+    font-size: $font-size-base;
+  }
+}
+
+// Responsive Spacing
+.section {
+  padding: $spacing-xl 0;
+
+  @include respond-to(xs) {
+    padding: $spacing-lg 0;
+  }
+}
+
+// Responsive Grid
+.grid {
+  @include grid(1, $spacing-md);
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Responsive Flex
+.flex {
+  @include flex(column);
+
+  @include respond-to(md) {
+    flex-direction: row;
+  }
 }

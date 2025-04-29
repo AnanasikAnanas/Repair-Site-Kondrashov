@@ -33,44 +33,124 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/mixins.scss';
+
 .benefits-section {
   display: flex;
   flex-direction: column;
   background: #000;
   color: #fffbfc;
-  padding: 50px 50px;
+  padding: 50px;
   justify-content: space-between;
   margin-top: 180px;
+  gap: 80px;
+
+  @media (max-width: 1200px) {
+    padding: 40px;
+    margin-top: 120px;
+    gap: 60px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+    margin-top: 80px;
+    gap: 40px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 20px;
+    margin-top: 60px;
+  }
 
   .benefits-section__header {
     display: flex;
     flex-direction: column;
     gap: 10.625rem;
+
+    @media (max-width: 1200px) {
+      gap: 8rem;
+    }
+
+    @media (max-width: 768px) {
+      gap: 4rem;
+    }
+
     h1 {
       font-size: 64px;
       font-weight: 400;
       max-width: 935px;
+      line-height: 120%;
+
+      @media (max-width: 1200px) {
+        font-size: 48px;
+        max-width: 700px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 36px;
+        max-width: 100%;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 28px;
+      }
     }
+
     .benefits-section__header-rhombus {
       display: flex;
       align-items: center;
       gap: 15px;
+
       p {
         font-size: 18px;
         font-weight: 400;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+      }
+
+      svg {
+        @media (max-width: 576px) {
+          transform: scale(0.8);
+        }
       }
     }
   }
+
   .benefits-section__content {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
     gap: 80px;
+    width: 100%;
+
+    @media (max-width: 1200px) {
+      gap: 60px;
+    }
+
+    @media (max-width: 768px) {
+      gap: 40px;
+    }
+
     .benefits-section__content-cards {
       display: flex;
       gap: 40px;
+      width: 100%;
+
+      @media (max-width: 1200px) {
+        gap: 30px;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 20px;
+        .benefits-section__content-cards-item:nth-child(2) {
+            align-self: flex-end;
+          }
+      }
+
       .benefits-section__content-cards-item {
-        transition: 0.3s;
+        transition: all 0.3s ease;
         border-radius: 1000px;
         width: 428px;
         height: 428px;
@@ -78,36 +158,101 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        &:hover {
-          scale: 1.1;
+
+        @media (max-width: 1200px) {
+          width: 320px;
+          height: 320px;
         }
+        @media (max-width: 768px) {
+          width: 500px;
+          height: 280px;
+          padding: 20px;
+        }
+
+        @media (max-width: 576px) {
+          height: 240px;
+          width: 230px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+
+          @media (max-width: 768px) {
+            transform: scale(1.02);
+          }
+        }
+
         p {
           font-size: 30px;
           max-width: 200px;
           text-align: center;
+
+          @media (max-width: 1200px) {
+            font-size: 24px;
+            max-width: 160px;
+          }
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+            max-width: none;
+          }
         }
       }
+
       .benefits-section__content-cards-item:nth-child(2) {
         background: #40362e;
         color: #fffbfc;
       }
     }
   }
-}
-.benefits-section__content-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  h4 {
-    max-width: 600px;
-    font-size: 30px;
-    font-weight: 400;
-    color: #848386;
-    line-height: 120%; /* 36px */
-    letter-spacing: -0.3px;
-  }
-  .content-button {
-    @include button(black, #848386);
+
+  .benefits-section__content-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    h4 {
+      max-width: 600px;
+      font-size: 30px;
+      font-weight: 400;
+      color: #848386;
+      line-height: 120%;
+      letter-spacing: -0.3px;
+      margin: 0;
+
+      @media (max-width: 1200px) {
+        font-size: 24px;
+        max-width: 500px;
+      }
+
+      @media (max-width: 992px) {
+        max-width: none;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
+    }
+
+    .content-button {
+      @include button(black, #848386);
+
+      @media (max-width: 992px) {
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
   }
 }
 </style>

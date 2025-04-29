@@ -33,20 +33,52 @@
 <style scoped lang="scss">
 .catalog-slider {
   margin-top: 100px;
+  padding: 0 50px;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    margin-top: 80px;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 60px;
+    padding: 0 30px;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
 }
+
 .projects-slider__navigation {
-  padding-left: 50px;
+  padding-left: 0;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 1rem;
+  }
+
   .projects-slider__navigation-btns {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @media (max-width: 576px) {
+      gap: 0.5rem;
+    }
   }
 }
+
 .slide-number {
   font-size: 30px;
   color: black;
@@ -54,7 +86,18 @@
   padding: 0 1rem;
   min-width: 30px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 20px;
+    padding: 0 0.5rem;
+  }
 }
+
 .nav-btn {
   display: flex;
   align-items: center;
@@ -67,21 +110,35 @@
   font-size: 18px;
   color: #848386;
   transition: all 0.3s ease;
-}
 
-.nav-btn:hover {
-  background-color: #f0f0f0;
-}
+  @media (max-width: 1200px) {
+    padding: 25px 50px;
+  }
 
-.slide-number {
-  font-size: 30px;
-  color: black;
-  font-weight: 400;
+  @media (max-width: 768px) {
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 }
 
 :deep(.swiper-button-prev),
 :deep(.swiper-button-next) {
   display: none;
+}
+
+:deep(.swiper) {
+  @media (max-width: 576px) {
+    padding-bottom: 30px;
+  }
 }
 </style>
 

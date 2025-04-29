@@ -25,32 +25,36 @@
       <div class="work-types-slider__right">
         <Swiper
           :modules="[Navigation]"
-          :slides-per-view="3"
+          :slides-per-view="'auto'"
           :loop="true"
           :space-between="40"
           :breakpoints="{
             320: {
-              slidesPerView: 1,
+              slidesPerView: 'auto',
               spaceBetween: 20,
             },
             576: {
-              slidesPerView: 1,
+              slidesPerView: 'auto',
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 'auto',
               spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 2,
+              slidesPerView: 'auto',
               spaceBetween: 30,
             },
             1200: {
-              slidesPerView: 2,
+              slidesPerView: 'auto',
               spaceBetween: 40,
             },
-            1536: {
-              slidesPerView: 2,
+            1537: {
+              slidesPerView: 'auto',
+              spaceBetween: 40,
+            },
+            1920: {
+              slidesPerView: 3,
               spaceBetween: 40,
             },
           }"
@@ -120,6 +124,7 @@ const slides = ref([
   flex-direction: column;
   gap: 50px;
   padding: 50px;
+  overflow: hidden;
 
   @media (max-width: 1200px) {
     padding: 40px;
@@ -141,60 +146,106 @@ const slides = ref([
     font-weight: 500;
     line-height: 130%;
     max-width: 900px;
+    margin-bottom: 80px;
 
     @media (max-width: 1200px) {
       font-size: 3rem;
+      margin-bottom: 60px;
     }
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
+      margin-bottom: 40px;
     }
 
     @media (max-width: 576px) {
       font-size: 2rem;
+      margin-bottom: 30px;
     }
   }
-  .work-types-slider__title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.125rem;
-    font-weight: 500;
-  }
+
   .work-types-slider {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: flex-start;
+    gap: 100px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
 
     @media (max-width: 1024px) {
       flex-direction: column;
       gap: 30px;
+      margin-bottom: 40px;
     }
 
     .work-types-slider__left {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 500px;
+      min-height: 500px;
+      flex-shrink: 0;
+      width: 200px;
 
       @media (max-width: 1024px) {
-        height: auto;
+        min-height: auto;
         gap: 20px;
+        width: 100%;
       }
+    }
+
+    .work-types-slider__title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.125rem;
+      font-weight: 500;
+      white-space: nowrap;
     }
 
     .work-types-slider__right {
       width: 100%;
-      max-width: 1400px;
-      .work-types-slider__slide {
-        max-width: 26.75rem;
+      overflow: hidden;
+      position: relative;
+
+      .work-types-slider__swiper {
         width: 100%;
+        margin: 0;
+        position: relative;
+      }
+
+      :deep(.swiper) {
+        overflow: visible;
+        width: 100%;
+      }
+
+      :deep(.swiper-wrapper) {
+        display: flex;
+        width: 100%;
+      }
+
+      :deep(.swiper-slide) {
+        width: 428px !important;
+        opacity: 1 !important;
+      }
+
+      .work-types-slider__slide {
+        width: 100%;
+        max-width: 428px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
         img {
           width: 100%;
-          height: 100%;
-          max-height: 31.25rem;
+          max-width: 428px;
+          height: 500px;
           object-fit: cover;
+        }
+
+        .work-types-slider__caption {
+          font-size: 1rem;
+          color: #848386;
+          margin-top: 10px;
         }
       }
     }
@@ -211,6 +262,9 @@ const slides = ref([
         border: 1px solid #848386;
         cursor: pointer;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
           background-color: #f0f0f0;
@@ -239,5 +293,9 @@ const slides = ref([
     margin-top: 40px;
     align-self: center;
   }
+}
+
+:deep(.swiper-slide-active) {
+  z-index: 2;
 }
 </style>

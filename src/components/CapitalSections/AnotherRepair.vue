@@ -36,17 +36,72 @@ const cards2 = [
 <style lang="scss">
 .another-repair {
   margin-top: 200px;
-	display: flex;
-	flex-direction: column;
-	gap: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media (max-width: 1200px) {
+    margin-top: 160px;
+    gap: 50px;
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 120px;
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    gap: 30px;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 80px;
+    gap: 25px;
+  }
+
   .another-repair__header {
     h2 {
       font-size: 64px;
       font-weight: 500;
       margin: 0 auto;
       max-width: 1000px;
-      line-height: 130%; /* 83.2px */
+      line-height: 130%;
       letter-spacing: -1.28px;
+      text-align: center;
+
+      @media (max-width: 1200px) {
+        font-size: 54px;
+        max-width: 800px;
+        letter-spacing: -1px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 44px;
+        max-width: 700px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 36px;
+        max-width: 600px;
+        letter-spacing: -0.5px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 28px;
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  .another-repair__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    @media (max-width: 576px) {
+      gap: 1px;
     }
   }
 }

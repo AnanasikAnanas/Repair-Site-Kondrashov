@@ -86,6 +86,21 @@ const projects = ref([
   position: relative;
   margin-top: 180px;
   padding: 50px;
+
+  @media (max-width: 1200px) {
+    margin-top: 120px;
+    padding: 40px;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+    padding: 30px;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 60px;
+    padding: 20px;
+  }
 }
 
 .projects-slider__slide {
@@ -98,18 +113,26 @@ const projects = ref([
   font-size: 64px;
   font-weight: 400;
   max-width: 935px;
-  line-height: 130%; /* 83.2px */
+  line-height: 130%;
   letter-spacing: -1.28px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 60px;
-}
-.all-projects-btn {
-  justify-self: flex-end;
-}
-.projects-slider__swiper {
-  height: 100%;
-  width: 100%;
+
+  @media (max-width: 1200px) {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 }
 
 .projects-slider__navigation {
@@ -118,20 +141,27 @@ const projects = ref([
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
   .projects-slider__navigation-btns {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @media (max-width: 576px) {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 }
-.slide-number {
-  font-size: 30px;
-  color: black;
-  font-weight: 500;
-  padding: 0 1rem;
-  min-width: 30px;
-  text-align: center;
-}
+
 .nav-btn {
   display: flex;
   align-items: center;
@@ -144,16 +174,39 @@ const projects = ref([
   font-size: 18px;
   color: #848386;
   transition: all 0.3s ease;
-}
 
-.nav-btn:hover {
-  background-color: #f0f0f0;
+  @media (max-width: 768px) {
+    padding: 20px 40px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 15px 30px;
+    flex: 1;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 }
 
 .slide-number {
   font-size: 30px;
   color: black;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.all-projects-btn {
+  justify-self: flex-end;
+  display: flex;
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 :deep(.swiper-button-prev),

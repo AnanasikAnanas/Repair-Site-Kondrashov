@@ -5,7 +5,7 @@ import Rhombus from '../icons/Rhombus.vue'
 </script>
 
 <template>
-  <main class="hero px-1">
+  <main class="hero">
     <TheHeader class="" color="white" />
     <div class="main-content">
       <div class="content">
@@ -32,22 +32,21 @@ import Rhombus from '../icons/Rhombus.vue'
   background-position: center;
   position: relative;
   color: white;
+  z-index: 1;
 }
 
 .main-content {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 100px;
   padding: 50px;
+  z-index: 2;
 
   @media (max-width: 1024px) {
-    gap: 60px;
     padding: 30px;
   }
 
   @media (max-width: 768px) {
-    gap: 40px;
     padding: 20px;
   }
 }
@@ -123,7 +122,6 @@ import Rhombus from '../icons/Rhombus.vue'
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-self: center;
     margin-top: 40px;
     gap: 20px;
     text-align: center;

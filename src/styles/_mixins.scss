@@ -1,15 +1,53 @@
+@import './variables';
+
 @mixin button($bg-color, $text-color) {
   padding: 30px 60px;
   font-size: 18px;
   cursor: pointer;
-  width: 26.875rem;
+  width: fit-content;
+  min-width: 26.875rem;
+  max-width: 100%;
   transition: background-color 0.3s;
   color: $text-color;
   background: $bg-color;
   border-radius: 1000px;
   border: 1px solid $color-jumbo;
+  text-align: center;
+  white-space: nowrap;
+
+  @media (max-width: 1200px) {
+    padding: 25px 50px;
+    min-width: 22rem;
+    font-size: 16px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 20px 40px;
+    min-width: 18rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px 30px;
+    min-width: auto;
+    width: 100%;
+    max-width: 26.875rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
   &:hover {
     background: #f0f0f0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    &:hover {
+      background: $bg-color;
+    }
   }
 }
 
@@ -31,4 +69,87 @@
       @content;
     }
   }
+}
+
+// Media Query Mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-sm - 1) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (min-width: $breakpoint-xxl) {
+      @content;
+    }
+  }
+}
+
+// Container Mixin
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Flexbox Mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Grid Mixin
+@mixin grid($columns: 1, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Typography Mixins
+@mixin text-xs {
+  font-size: $font-size-sm;
+  line-height: 1.25;
+}
+
+@mixin text-sm {
+  font-size: $font-size-sm;
+  line-height: 1.5;
+}
+
+@mixin text-base {
+  font-size: $font-size-base;
+  line-height: 1.5;
+}
+
+@mixin text-lg {
+  font-size: $font-size-lg;
+  line-height: 1.5;
+}
+
+@mixin text-xl {
+  font-size: $font-size-xl;
+  line-height: 1.5;
+}
+
+@mixin text-xxl {
+  font-size: $font-size-xxl;
+  line-height: 1.5;
 }

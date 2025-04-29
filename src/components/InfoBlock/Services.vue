@@ -60,22 +60,42 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .services {
   max-width: 360px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  @media (max-width: 992px) {
+    max-width: 100%;
+    gap: 20px;
+  }
 }
-p{
+
+p {
   margin: 0;
+  font-size: 18px;
+  line-height: 130%;
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+  }
 }
+
 .services__title {
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 16px;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.services__description {
+  color: #848386;
 }
 
 .services__list {
@@ -85,20 +105,37 @@ p{
   gap: 20px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 576px) {
+    gap: 15px;
+  }
 }
 
 .services__item {
   display: flex;
   gap: 10px;
   align-items: flex-start;
+
+  p {
+    strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
 }
 
 .services__item :deep(svg) {
   flex-shrink: 0;
   margin-top: 5px;
+
+  @media (max-width: 576px) {
+    transform: scale(0.8);
+    margin-top: 3px;
+  }
 }
 
-.services__item p {
-  margin: 0;
+.services__footer {
+  color: #848386;
+  font-style: italic;
 }
 </style>
