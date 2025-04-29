@@ -46,6 +46,7 @@
 		padding: 20px;
 		max-width: 910px;
 		outline: none;
+		font-size: 18px;
 		&:focus {
 			border: 1px solid rgba(31, 31, 31);
 		}

@@ -1,6 +1,6 @@
 <script setup>
+import ButtonWithModal from '@/components/ButtonWithModal.vue'
 import Rhombus from '../icons/Rhombus.vue'
-
 </script>
 
 <template>
@@ -11,10 +11,10 @@ import Rhombus from '../icons/Rhombus.vue'
       </div>
       <div class="project-in-your-space__content">
         <Rhombus />
-				<p>Скидка 20% при первом заказе</p>
+        <p>Скидка 20% при первом заказе</p>
       </div>
     </div>
-    <button class="project-in-your-space__button">Заказать ремонт</button>
+    <ButtonWithModal class="project-in-your-space__button" text="Заказать ремонт" />
   </section>
 </template>
 
@@ -25,36 +25,32 @@ import Rhombus from '../icons/Rhombus.vue'
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-	padding: 50px 50px;
-	margin-top: 180px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 1000px;
-	h1{
-		font-size: 64px;
-		font-weight: 500;
-		max-width: 56.25rem;
-		margin: 0;
-	}
-	.project-in-your-space__content{
-		display: flex;
-		align-items: center;
-		gap: .9375rem;
-		p{
-			font-size: 18px;
-			font-weight: 400;
-		}
-	}
-	button{
-		@include button(white, #848386);
-		display: flex;
-		justify-content: center;
-		align-self: flex-end;
-		margin-top: 60px;
-		&:hover {
-			background: #f0f0f0;
-		}
-	}
+  padding: 50px 50px;
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1000px;
+  h1 {
+    font-size: 64px;
+    font-weight: 500;
+    max-width: 56.25rem;
+    margin: 0;
+  }
+  .project-in-your-space__content {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  .project-in-your-space__button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: 60px;
+  }
 }
 </style>

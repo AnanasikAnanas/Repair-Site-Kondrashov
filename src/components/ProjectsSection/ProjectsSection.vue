@@ -41,19 +41,19 @@
         </button>
       </div>
 
-      <button class="all-projects-btn">Все проекты</button>
+      <ButtonWithModal class="all-projects-btn" text="Все проекты" />
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation } from 'swiper/modules'
+import ButtonWithModal from '@/components/ButtonWithModal.vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { ref } from 'vue'
 import ProjectCard from './ProjectCard.vue'
-import ArrowSlider from '@/components/icons/ArrowSlider.vue'
 
 const currentSlide = ref(0)
 
@@ -105,7 +105,6 @@ const projects = ref([
   margin-bottom: 60px;
 }
 .all-projects-btn {
-  @include button(white, #848386);
   justify-self: flex-end;
 }
 .projects-slider__swiper {

@@ -1,6 +1,7 @@
 <script setup>
-import Rhombus from '../icons/Rhombus.vue'
+import ButtonWithModal from '../ButtonWithModal.vue'
 import ArrowSlider from '../icons/ArrowSlider.vue'
+import Rhombus from '../icons/Rhombus.vue'
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import ArrowSlider from '../icons/ArrowSlider.vue'
       <a href="#" class="arrow-button">
         <ArrowSlider rotate="90" />
       </a>
-      <button class="project-in-your-space__button">Заказать ремонт</button>
+      <ButtonWithModal class="project-in-your-space__button" text="Заказать ремонт" />
     </div>
   </section>
 </template>
@@ -83,7 +84,6 @@ import ArrowSlider from '../icons/ArrowSlider.vue'
     }
   }
   .project-in-your-space__button {
-    @include button(white, #848386);
     position: absolute;
     right: 0;
     &:hover {

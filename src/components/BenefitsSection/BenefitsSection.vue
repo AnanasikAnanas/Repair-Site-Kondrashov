@@ -65,12 +65,12 @@ export default {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
-		gap: 80px;
+    gap: 80px;
     .benefits-section__content-cards {
       display: flex;
       gap: 40px;
       .benefits-section__content-cards-item {
-				transition: 0.3s;
+        transition: 0.3s;
         border-radius: 1000px;
         width: 428px;
         height: 428px;
@@ -78,11 +78,11 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-				&:hover{
-					scale: 1.1;
-				}
+        &:hover {
+          scale: 1.1;
+        }
         p {
-					font-size: 30px;
+          font-size: 30px;
           max-width: 200px;
           text-align: center;
         }
@@ -97,7 +97,7 @@ export default {
 .benefits-section__content-text {
   display: flex;
   justify-content: space-between;
-	align-items: center;
+  align-items: center;
   h4 {
     max-width: 600px;
     font-size: 30px;
@@ -108,7 +108,6 @@ export default {
   }
   .content-button {
     @include button(black, #848386);
-    
   }
 }
 </style>

@@ -50,7 +50,7 @@
               spaceBetween: 40,
             },
             1536: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 40,
             },
           }"
@@ -71,19 +71,19 @@
         </Swiper>
       </div>
     </div>
-    <button class="works-section__button">Заказать ремонт</button>
+    <ButtonWithModal class="works-section__button" text="Заказать ремонт" />
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation } from 'swiper/modules'
-
+import ButtonWithModal from '@/components/ButtonWithModal.vue'
+import ArrowSlider from '@/components/icons/ArrowSlider.vue'
+import Rhombus from '@/components/icons/Rhombus.vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import Rhombus from '@/components/icons/Rhombus.vue'
-import ArrowSlider from '@/components/icons/ArrowSlider.vue'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { ref } from 'vue'
 
 const slides = ref([
   {
@@ -230,7 +230,6 @@ const slides = ref([
 }
 
 .works-section__button {
-  @include button(white, #848386);
   display: flex;
   justify-content: center;
   align-self: flex-end;
@@ -239,10 +238,6 @@ const slides = ref([
   @media (max-width: 768px) {
     margin-top: 40px;
     align-self: center;
-  }
-
-  &:hover {
-    background: #f0f0f0;
   }
 }
 </style>

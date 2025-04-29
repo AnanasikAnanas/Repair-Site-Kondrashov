@@ -14,6 +14,10 @@ export default {
     color: {
       type: String,
       default: '#0A0A0A',
+      opacity: {
+        type: Number,
+        default: 0.4,
+      },
     },
   },
 }
@@ -26,9 +30,9 @@ nav {
   gap: 1.875rem;
 }
 a {
-  text-decoration: none;
   color: #0a0a0a;
   opacity: 0.4;
+  text-decoration: none;
   transition: opacity 0.3s ease;
 }
 a:hover {

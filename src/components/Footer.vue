@@ -50,18 +50,18 @@
         </div>
       </div>
 
-      <button>Обратный звонок</button>
+      <ButtonWithModal text="Обратный звонок" />
     </div>
   </footer>
 </template>
 
 <script setup>
+import ButtonWithModal from '@/components/ButtonWithModal.vue'
 import LogoFooter from '@/components/icons/LogoFooter.vue'
-import VkIcon from '@/components/icons/VkIcon.vue'
 import TelegramIcon from '@/components/icons/TelegramIcon.vue'
 import ViberIcon from '@/components/icons/ViberIcon.vue'
+import VkIcon from '@/components/icons/VkIcon.vue'
 import YoutubeIcon from '@/components/icons/YoutubeIcon.vue'
-import OkIcon from '@/components/icons/OkIcon.vue'
 </script>
 
 <style scoped lang="scss">
@@ -71,69 +71,134 @@ footer {
   justify-content: space-between;
   padding: 50px;
   margin-top: 120px;
-  a{
+
+  @media (max-width: 1200px) {
+    padding: 40px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+    margin-top: 60px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  a {
     color: black;
     text-decoration: none;
     transition-duration: 300ms;
-    &:hover{
+    &:hover {
       opacity: 0.5;
     }
   }
+
   .footer__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+    }
+
     .footer__links {
       display: flex;
       flex-direction: column;
       gap: 30px;
       max-width: 275px;
+
+      @media (max-width: 768px) {
+        align-items: center;
+        gap: 20px;
+      }
+
       a {
         color: black;
         opacity: 0.2;
         text-decoration: underline;
         font-size: 18px;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
       }
     }
   }
+
   .footer__navs {
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      gap: 20px;
+    }
+
     a {
       font-size: 30px;
       font-weight: 400;
+
+      @media (max-width: 1200px) {
+        font-size: 24px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
     }
   }
+
   .footer__contacts {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+    }
+
     .footer__contacts-left {
       display: flex;
       flex-direction: column;
       gap: 30px;
+
+      @media (max-width: 768px) {
+        align-items: center;
+        gap: 20px;
+      }
     }
+
     a {
       color: #848386;
       text-decoration: underline;
     }
-    .footer__email {
-      display: flex;
-      flex-direction: column;
-    }
+
+    .footer__email,
     .footer__phone {
       display: flex;
       flex-direction: column;
+
+      @media (max-width: 768px) {
+        align-items: center;
+      }
     }
+
     .footer__social {
       display: flex;
       gap: 15px;
+
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
     }
-  }
-  button {
-    @include button(white, #848386);
   }
 }
 </style>
