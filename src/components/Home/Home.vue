@@ -38,6 +38,7 @@ import Rhombus from '../icons/Rhombus.vue'
 .main-content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 100px;
   padding: 50px;
   z-index: 2;
@@ -56,7 +57,6 @@ import Rhombus from '../icons/Rhombus.vue'
   display: flex;
   flex-direction: column;
   gap: 100px;
-
   @media (max-width: 1024px) {
     gap: 60px;
   }
@@ -116,13 +116,11 @@ import Rhombus from '../icons/Rhombus.vue'
   margin-top: 150px;
 
   @media (max-width: 1024px) {
-    margin-top: 80px;
     gap: 30px;
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-top: 40px;
     gap: 20px;
     text-align: center;
   }

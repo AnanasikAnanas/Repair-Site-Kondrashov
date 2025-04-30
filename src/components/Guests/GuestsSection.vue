@@ -182,9 +182,6 @@ import Rhombus from '../icons/Rhombus.vue'
   .project-in-your-space__button {
     position: absolute;
     right: 0;
-    &:hover {
-      background: #f0f0f0;
-    }
 
     @media (max-width: 992px) {
       position: static;

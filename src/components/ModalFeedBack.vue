@@ -57,8 +57,7 @@
           <p class="modal__privacy">
             Нажимая кнопку "Отправить" вы даете согласие на обработку персональных данных
           </p>
-
-          <button class="modal__submit" type="submit">Отправить</button>
+          <button class="modal__submit" type="submit" @click="submitForm">Отправить</button>
         </div>
       </form>
     </div>
@@ -127,6 +126,7 @@ export default {
       // Здесь будет логика отправки формы
       console.log('Form submitted:', this.formData)
       this.closeModal()
+      this.$router.push('/success')
     },
   },
 }

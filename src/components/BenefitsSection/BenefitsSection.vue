@@ -65,13 +65,16 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 10.625rem;
+    max-width: 50%;
 
     @media (max-width: 1200px) {
       gap: 8rem;
+      max-width: 60%;
     }
 
     @media (max-width: 768px) {
       gap: 4rem;
+      max-width: 100%;
     }
 
     h1 {
@@ -122,7 +125,6 @@ export default {
     flex-direction: column;
     align-self: flex-end;
     gap: 80px;
-    width: 100%;
 
     @media (max-width: 1200px) {
       gap: 60px;
@@ -145,8 +147,8 @@ export default {
         flex-direction: column;
         gap: 20px;
         .benefits-section__content-cards-item:nth-child(2) {
-            align-self: flex-end;
-          }
+          align-self: flex-end;
+        }
       }
 
       .benefits-section__content-cards-item {
@@ -160,8 +162,8 @@ export default {
         justify-content: center;
 
         @media (max-width: 1200px) {
-          width: 320px;
-          height: 320px;
+          width: 240px;
+          height: 240px;
         }
         @media (max-width: 768px) {
           width: 500px;

@@ -1,7 +1,7 @@
 <template>
   <div class="menu" :class="{ 'menu--open': isOpen }">
     <div class="menu__header">
-      <div class="menu__logo">
+      <div class="menu__logo" @click="goToMain">
         <IconLogo />
       </div>
       <button class="menu__close" @click="closeMenu">Закрыть</button>
@@ -38,7 +38,7 @@
           <TelegramIcon />
         </a>
         <a href="#" class="menu__social-link">
-          <WhatsappIcon />
+          <ViberIcon />
         </a>
         <a href="#" class="menu__social-link">
           <YoutubeIcon />
@@ -60,8 +60,15 @@ import OkIcon from './icons/OkIcon.vue'
 import TelegramIcon from './icons/TelegramIcon.vue'
 import VkIcon from './icons/VkIcon.vue'
 import YoutubeIcon from './icons/YoutubeIcon.vue'
+import ViberIcon from './icons/ViberIcon.vue'
+import { useRouter } from 'vue-router'
 
 const isOpen = ref(false)
+const router = useRouter()
+
+const goToMain = () => {
+  router.push('/')
+}
 
 const openMenu = () => {
   isOpen.value = true
@@ -73,7 +80,7 @@ const closeMenu = () => {
   document.body.style.overflow = ''
 }
 
-defineExpose({
+defineExpose({  
   openMenu,
   closeMenu,
 })

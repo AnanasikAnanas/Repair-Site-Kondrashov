@@ -2,7 +2,7 @@ import HomeView from '@/views/HomeView.vue'
 import CatalogView from '@/views/CatalogView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import CapitalView from '@/views/CapitalView.vue'
-
+import SuccessView from '@/views/SuccessView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -20,6 +20,11 @@ const router = createRouter({
       path: '/capital',
       name: 'capital',
       component: CapitalView,
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: SuccessView,
     },
   ],
 })
