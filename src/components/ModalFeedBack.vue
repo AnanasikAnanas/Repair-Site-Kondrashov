@@ -376,7 +376,6 @@ export default {
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 20px;
-    align-items: flex-start;
   }
 }
 
@@ -399,7 +398,6 @@ export default {
 
 .modal__submit {
   @include button(white, #848386);
-  min-width: 200px;
 
   @media (max-width: 768px) {
     width: 100%;
